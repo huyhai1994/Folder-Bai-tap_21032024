@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    body {
+        background-color: bisque;
+
+    }
+
+    input {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    table, td, th {
+        border: 1 px solid black;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+<body>
+<table>
+    <tr>
+        <th colspan="5"> Trang Quản lý sản Phẩm</th>
+    </tr>
+    <tr>
+        <td colspan="5" width="80%"><input type ="text" id="addProduct2List" placeholder="Mặt hàng cần thêm"  style="width: 300px"></td>
+        <td>
+            <button type="button" onclick="addProduct2List()"> Thêm</button>
+        </td>
+    </tr>
+</table>
+<h4 id="displayProductName"></h4>
+<script>
+    let ProductList = ["Cam", "Quyt"];
+    displayProductList();
+
+    function addProduct2List() {
+        let newProduct = document.getElementById("addProduct2List").value;
+        ProductList.push(newProduct);
+        displayProductList();
+    }
+
+    function deleteProductInList(Location_delete_Product) {
+        console.log(Location_delete_Product);
+        for (let j = 0; j < ProductList.length; j++) {
+
+            if (j === Location_delete_Product) {
+                for (let k = j; k < ProductList.length; k++) {
+                    ProductList[j] = ProductList[j + 1];
+                }
+            }
+        }
+        ProductList.pop();
+        displayProductList();
+    }
+
+    function renameProductInList(Location_rename_Product) {
+        let newProductName = "";
+        for (let i = 0; i < ProductList.length; i++) {
+            if (i === Location_rename_Product) {
+                newProductName = prompt("Nhap ten san pham moi thay the : ");
+                ProductList [i] = newProductName;
+                alert("Nhap thanh cong ten san pham moi...");
+                displayProductList();
+            }
+        }
+    }
+
+    function displayProductList() {
+        let displayString = " ";
+        displayString = "<table border='2'> <tr>";
+        displayString = displayString + "<th>"
+        displayString = displayString + "STT";
+        displayString = displayString + "</th>"
+        displayString = displayString + "<th>"
+        displayString = displayString + "Tên sản phẩm";
+        displayString = displayString + "</th>"
+        displayString = displayString + "<th>"
+        displayString = displayString + "Sửa tên sản phẩm";
+        displayString = displayString + "</th>"
+        displayString = displayString + "<th>"
+        displayString = displayString + "Xoá sản phẩm";
+        displayString = displayString + "</th>"
+        displayString = displayString + "</tr>";
+        for (let i = 0; i < ProductList.length; i++) {
+            displayString = displayString + "<td>";
+            displayString = displayString + (i + 1);
+            displayString = displayString + "</td>";
+            displayString = displayString + "<td>";
+            displayString = displayString + ProductList[i];
+            displayString = displayString + "</td>";
+            displayString = displayString + "<td>";
+            displayString = displayString + "<button type='button'  onclick = 'renameProductInList(" + i + ")'> Sửa tên </button>"
+            displayString = displayString + "</td>";
+            displayString = displayString + "<td>";
+            displayString = displayString + "<button type='button'  onclick = 'deleteProductInList(" + i + ")'> Xoá </button>"
+            displayString = displayString + "</td>";
+            displayString = displayString + "</tr>";
+        }
+        displayString = displayString + "</table>";
+        document.getElementById("displayProductName").innerHTML = displayString;
+    }
+</script>
+</body>
+</html>

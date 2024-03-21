@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    class Temperature {
+        temperature;
+        temperatureType;
+
+        constructor(inputTemperature, inputTemperatureType) {
+            this.temperature = inputTemperature;
+            this.temperatureType = inputTemperatureType;
+        }
+
+        convertTemperature() {
+            if (this.temperatureType === 'F') {
+                return (this.temperature - 32) * 5 / 9;
+            } else if (this.temperatureType === 'C' && this.temperature > -273) {
+                return (this.temperature * 9 / 5) + 32;
+            } else {
+                console.log('Please input another temperature!');
+                console.log("Temperature couldn't be low than -273oC");
+            }
+
+        }
+    }
+
+    let userTemp = new Temperature(-280, 'C');
+    console.log(userTemp.convertTemperature());
+</script>
+</body>
+</html>

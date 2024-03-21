@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    class Rectangle {
+        length;
+        width;
+
+        constructor(inputLength, inputWidth) {
+            this.width = inputWidth;
+            this.length = inputLength;
+        }
+
+        calculatePerimeter() {
+            return 2 * this.length + 2 * this.width;
+        }
+
+        calculateArea() {
+            return this.length * this.width;
+        }
+
+    }
+
+    let width = 2;
+    let length = 3;
+    rectangle1 = new Rectangle(length, width);
+    document.write("Chieu rong cua chu nhat " + rectangle1.width +"<br>");
+    document.write("Chieu daicua chu nhat " + rectangle1.length);
+
+    alert(rectangle1.calculatePerimeter());
+    alert(rectangle1.calculateArea());
+
+
+</script>
+</body>
+</html>

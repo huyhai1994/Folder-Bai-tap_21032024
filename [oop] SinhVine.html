@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+    class Student {
+        name;
+        age;
+        grade;
+
+        constructor(inputName, inputAge, inputGrade) {
+            this.age = inputAge;
+            this.name = inputName;
+            this.grade = inputGrade;
+        }
+
+        displayStudentInfo() {
+            console.log("student name :" + this.name);
+            console.log("student age :" + this.age);
+        }
+
+        calculateStudentAverageGrade() {
+            let sum = 0;
+            if (this.grade !== []) {
+                for (let i = 0; i < this.grade.length; i++) {
+                    sum += this.grade[i];
+                }
+                return sum / this.grade.length;
+            } else {
+                console.log("Khong co diem");
+            }
+
+        }
+
+    }
+
+    let student1 = new Student("Hai", 28, [10, 9, 8]);
+    let student2 = new Student("Duong", 18, [10, 5, 8]);
+    student1.displayStudentInfo();
+    console.log(student1.calculateStudentAverageGrade());
+    student2.displayStudentInfo();
+    console.log(student2.calculateStudentAverageGrade());
+    if (student1.calculateStudentAverageGrade() > student2.calculateStudentAverageGrade()) {
+        console.log("Hoc sinh 1 cao diem hon");
+    } else if (student1.calculateStudentAverageGrade()===student2.calculateStudentAverageGrade()) {
+        console.log("bang diem nhau ...");
+    } else {
+        console.log("Hoc sinh 2 cao diem hon");
+    }
+
+</script>
+
+</body>
+</html>
