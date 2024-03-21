@@ -16,7 +16,7 @@
     }
 
     table, td, th {
-        border: 1 px solid black;
+        border: 1px solid black;
         text-align: center;
         margin-left: auto;
         margin-right: auto;
@@ -25,10 +25,11 @@
 <body>
 <table>
     <tr>
-        <th colspan="5"> Trang Quản lý sản Phẩm</th>
+        <th colspan="6"> Trang Quản lý sản Phẩm</th>
     </tr>
     <tr>
-        <td colspan="5" width="80%"><input type ="text" id="addProduct2List" placeholder="Mặt hàng cần thêm"  style="width: 300px"></td>
+        <td colspan="5" width="80%"><input type="text" id="addProduct2List" placeholder="Mặt hàng cần thêm"
+                                           style="width: 300px"></td>
         <td>
             <button type="button" onclick="addProduct2List()"> Thêm</button>
         </td>
@@ -73,7 +74,7 @@
 
     function displayProductList() {
         let displayString = " ";
-        displayString = "<table border='2'> <tr>";
+        displayString = "<table border='1'> <tr>";
         displayString = displayString + "<th>"
         displayString = displayString + "STT";
         displayString = displayString + "</th>"

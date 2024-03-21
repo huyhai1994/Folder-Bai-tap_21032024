@@ -18,6 +18,9 @@
             this.name = inputName;
             this.grade = inputGrade;
         }
+        setNewStudentNameBy(nameInput){
+            this.name = nameInput;
+        }
 
         displayStudentInfo() {
             console.log("student name :" + this.name);
@@ -45,9 +48,11 @@
     console.log(student1.calculateStudentAverageGrade());
     student2.displayStudentInfo();
     console.log(student2.calculateStudentAverageGrade());
-    if (student1.calculateStudentAverageGrade() > student2.calculateStudentAverageGrade()) {
+    if (student1.calculateStudentAverageGrade() >
+        student2.calculateStudentAverageGrade()) {
         console.log("Hoc sinh 1 cao diem hon");
-    } else if (student1.calculateStudentAverageGrade()===student2.calculateStudentAverageGrade()) {
+    } else if (student1.calculateStudentAverageGrade() ===
+        student2.calculateStudentAverageGrade()) {
         console.log("bang diem nhau ...");
     } else {
         console.log("Hoc sinh 2 cao diem hon");
